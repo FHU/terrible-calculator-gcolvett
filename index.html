@@ -7,33 +7,38 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <h1>Terrible Calculator</h1>
-
-    <p>
-    <label for="number1">Number 1: 
-        <input type="text" name="number1" id="number1">
-    </label>
-    </p>
-
-    <select name="operator" id="operator">
-        <option value="+"> + </option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-    </select>
-
-    <p>
-    <label for="number2">Number 2: 
-        <input type="text" name="number2" id="number2">
-    </label>
-    </p>
-
-    <button id="calculateButton">Calculate</button>
-
-    <h2 >Result: <span id="result">?</span></h2>
     
+    <div class="wrapper">
 
-    <script src="main.js"></script>
+        <h1>Terrible Calculator</h1>
+        
+        <div class="numInput">            
+            <p>
+                <input type="text" name="number1" id="number1" placeholder="#">
+            </p>
+
+            <p>
+                <input type="text" name="number2" id="number2" placeholder="#">
+            </p>
+        </div>
+        
+        <div class="operator">
+            <select name="operator" id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>        
+                <option value="x">x</option> 
+                <option value="/">/</option>
+            </select>
+        </div>
+        
+        <button id="calculateButton">Calculate</button>
+        
+        <div class="result">
+            <span id="result">Result</span>
+        </div>
+        
+        <script src="main.js"></script>
+    </div>
+        
 </body>
 </html>

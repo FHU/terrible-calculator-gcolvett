@@ -1,23 +1,33 @@
-// Step 1 - Find all the elements we need to interact with
-const num1Input = document.getElementById('number1')
-const num2Input = document.getElementById('number2')
-const operatorSelect = document.getElementById('operator')
-const calculateButton = document.getElementById('calculateButton')
-const resultSpan = document.getElementById('result')
+// alert("This is a terrible calculator.")
 
-// Step 2 - Add an event listener to the button to call a function when clicked
-calculateButton.addEventListener('click', calculate)
+const num1Input = document.getElementById('number1');
+const num2Input = document.getElementById('number2');
+const calculateButton = document.getElementById('calculateButton');
+const operatorSelect = document.getElementById('operator');
+const resultSpan = document.getElementById('result');
+
+calculateButton.addEventListener("click", calculate);
 
 function calculate() {
-    const num1 = parseFloat(num1Input.value)
-    const num2 = parseFloat(num2Input.value)
+    const num1 = parseFloat(num1Input.value);
+    const num2 = parseFloat(num2Input.value);
     const operator = operatorSelect.value;
 
-    let result
-    if( operator === "+") {
-        result = num1 + num2
+    let result;
+
+    if (isNaN(num1) || isNaN(num2)) {   
+        result = 'Error!';     
+        resultSpan.innerText = result;
+        return;
+    } else if(operator === "+") {
+        result = num1 + num2;
+    } else if(operator === "-") {
+        result = num1 - num2;
+    } else if(operator === "x") {
+        result = num1 * num2;
+    } else if (operator === "/") {
+        result = num1 / num2;
     }
-    
-    // Step 3 - update the result span with the result of the calculation
+
     resultSpan.innerText = result;
 }
